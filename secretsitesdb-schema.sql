@@ -31,6 +31,7 @@ CREATE TABLE interestpoints (
 	name VARCHAR(50) NOT NULL,
     longitude REAL NOT NULL,
     latitude REAL NOT NULL,
+	description VARCHAR(500) NOT NULL,
     creation_timestamp DATETIME not null default current_timestamp,
     PRIMARY KEY (id)
 );
@@ -143,50 +144,50 @@ INSERT INTO user_roles (userid, role) values (@barneyid, 'administrator');
 INSERT INTO auth_tokens (userid, token) values (@barneyid, unhex(REPLACE(UUID(),'-','')));
 
 
-insert into interestpoints (id, name, longitude, latitude) 
-values (unhex(REPLACE(UUID(),'-','')), "California", -84.902344, 30.059586);
+insert into interestpoints (id, name, longitude, latitude, description) 
+values (unhex(REPLACE(UUID(),'-','')), "California", -84.902344, 30.059586, "Test for a California's description");
 
-insert into interestpoints (id, name, longitude, latitude) 
-values (unhex(REPLACE(UUID(),'-','')), "Sidney", 140.097656, -35.254591);
+insert into interestpoints (id, name, longitude, latitude, description)  
+values (unhex(REPLACE(UUID(),'-','')), "Sidney", 140.097656, -35.254591, "Test for a Sidney's description");
 SELECT @sidneyid:= id from interestpoints where name="Sidney";
 
-insert into interestpoints (id, name, longitude, latitude) 
-values (unhex(REPLACE(UUID(),'-','')), "Madagascar", 46.582031, -21.053744);
+insert into interestpoints (id, name, longitude, latitude, description)  
+values (unhex(REPLACE(UUID(),'-','')), "Madagascar", 46.582031, -21.053744, "Test for a Madagascar's description");
 
-insert into interestpoints (id, name, longitude, latitude) 
-values (unhex(REPLACE(UUID(),'-','')), "Argentina", -73.300781, -49.217597);
+insert into interestpoints (id, name, longitude, latitude, description)  
+values (unhex(REPLACE(UUID(),'-','')), "Argentina", -73.300781, -49.217597, "Test for a Argentina's description");
 SELECT @argentinaid:= id from interestpoints where name="Argentina";
 
-insert into interestpoints (id, name, longitude, latitude) 
-values (unhex(REPLACE(UUID(),'-','')), "New York", -72.246094, 40.638967);
+insert into interestpoints (id, name, longitude, latitude, description)  
+values (unhex(REPLACE(UUID(),'-','')), "New York", -72.246094, 40.638967, "Test for a New York's description");
 SELECT @nyid:= id from interestpoints where name="New York";
 
-insert into interestpoints (id, name, longitude, latitude) 
-values (unhex(REPLACE(UUID(),'-','')), "Japan", 137.636719, 36.518466);
+insert into interestpoints (id, name, longitude, latitude, description)  
+values (unhex(REPLACE(UUID(),'-','')), "Japan", 137.636719, 36.518466, "Test for a Japan's description");
 SELECT @japanid:= id from interestpoints where name="Japan";
 
-insert into interestpoints (id, name, longitude, latitude) 
-values (unhex(REPLACE(UUID(),'-','')), "Alaska", -150.996094, 65.906139);
+insert into interestpoints (id, name, longitude, latitude, description)  
+values (unhex(REPLACE(UUID(),'-','')), "Alaska", -150.996094, 65.906139, "Test for a Alaska's description");
 
-insert into interestpoints (id, name, longitude, latitude) 
+insert into interestpoints (id, name, longitude, latitude, description, "Test for a Oslo's description"); 
 values (unhex(REPLACE(UUID(),'-','')), "Oslo", 7.207031, 60.538372);
 
-insert into interestpoints (id, name, longitude, latitude) 
-values (unhex(REPLACE(UUID(),'-','')), "Mexico", -102.480469, 22.826820);
+insert into interestpoints (id, name, longitude, latitude, description)  
+values (unhex(REPLACE(UUID(),'-','')), "Mexico", -102.480469, 22.826820, "Test for a Mexico's description");
 SELECT @mexicoid:= id from interestpoints where name="Mexico";
 
-insert into interestpoints (id, name, longitude, latitude) 
-values (unhex(REPLACE(UUID(),'-','')), "Indian", 78.574219, 19.549437);
+insert into interestpoints (id, name, longitude, latitude, description)  
+values (unhex(REPLACE(UUID(),'-','')), "Indian", 78.574219, 19.549437, "Test for a Indian's description");
 
-insert into interestpoints (id, name, longitude, latitude) 
-values (unhex(REPLACE(UUID(),'-','')), "Las Vegas", -120.761719, 37.640335);
+insert into interestpoints (id, name, longitude, latitude, description)  
+values (unhex(REPLACE(UUID(),'-','')), "Las Vegas", -120.761719, 37.640335, "Test for a Las Vegas's description");
 SELECT @lasvegasid:= id from interestpoints where name="Las Vegas";
 
-insert into interestpoints (id, name, longitude, latitude) 
-values (unhex(REPLACE(UUID(),'-','')), "Ontario", -69.785156, 53.061025);
+insert into interestpoints (id, name, longitude, latitude, description)
+values (unhex(REPLACE(UUID(),'-','')), "Ontario", -69.785156, 53.061025, "Test for a Las Ontario's description")
 
-insert into interestpoints (id, name, longitude, latitude) 
-values (unhex(REPLACE(UUID(),'-','')), "London", -1.933594, 52.422523);
+insert into interestpoints (id, name, longitude, latitude, description) 
+values (unhex(REPLACE(UUID(),'-','')), "London", -1.933594, 52.422523, "Test for a Las London's description");
 SELECT @londonid:= id from interestpoints where name="London";
 
 
